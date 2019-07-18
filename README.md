@@ -1,9 +1,9 @@
-# Flutter Local Notifications Plugin
+# Flutter Local Notifications Plugin sans iOS delegate
 
 [![pub package](https://img.shields.io/pub/v/flutter_local_notifications.svg)](https://pub.dartlang.org/packages/flutter_local_notifications)
 [![Build Status](https://api.cirrus-ci.com/github/MaikuB/flutter_local_notifications.svg)](https://cirrus-ci.com/github/MaikuB/flutter_local_notifications/master)
 
-A cross platform plugin for displaying local notifications. 
+A cross platform plugin for displaying local notifications forked to remove the iOS delegate that causes other notifications in your Flutter app to stop working, but preserving the ability for Android to process local notifications.
 
 ## Supported Platforms
 * Android API 16+ (4.1+, the minimum version supported by Flutter). Uses the NotificationCompat APIs so it can be run older Android devices

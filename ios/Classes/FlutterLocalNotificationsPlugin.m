@@ -78,8 +78,12 @@ typedef NS_ENUM(NSInteger, RepeatInterval) {
     persistentState = [NSUserDefaults standardUserDefaults];
     FlutterLocalNotificationsPlugin* instance = [[FlutterLocalNotificationsPlugin alloc] init];
     if(@available(iOS 10.0, *)) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        center.delegate = instance;
+        // ROMMEL removed per:
+        // "iOS handles showing push notifications out of the box so if you're only using this plugin
+        // to display the notification payload on Android then it's suggested that you fork the plugin
+        // code and remove the following part in the iOS code"
+        // UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        // center.delegate = instance;
     }
     [registrar addApplicationDelegate:instance];
     [registrar addMethodCallDelegate:instance channel:channel];
